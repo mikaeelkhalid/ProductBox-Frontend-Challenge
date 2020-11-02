@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class AddProduct extends Component {
@@ -39,9 +39,9 @@ export default class AddProduct extends Component {
 
     axios.post('/items/', formData)
         .then((res) => {
-            console.log(res.data)
+            //console.log(res.data)
         }).catch((error) => {
-            console.log(error)
+           // console.log(error)
         });
 
         this.setState({ name: '', price: '', img: '' })
@@ -73,7 +73,7 @@ render() {
                     For Product Iamge URL, "Copy Image Address" from one of google images.
                 </div>
             </div> 
-            </>
+         </>
     )
 }
 }

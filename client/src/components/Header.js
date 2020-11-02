@@ -3,6 +3,7 @@ import React from 'react';
 function Header() {
 
   return ( 
+    <>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div className="container">
         <a className="navbar-brand" href="#">RandoStore.</a>
@@ -11,6 +12,7 @@ function Header() {
         </button>
       </div>
     </nav>
+    </>
   );
 }
 
