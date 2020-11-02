@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Products from './components/Products';
 import Header from './components/Header';
 import Cart from './components/Cart';
@@ -14,9 +14,18 @@ import {
 
 function App() {
   
-  const [cart, setCart] = useState([]);
-  // const [page, setPage] = useState(PAGE_HOME);
+const [cart, setCart] = useState([]);
 
+useEffect(() => {
+  const data = localStorage.getItem("my-cart");
+  if (data) {
+    setCart(JSON.parse(data));
+  }
+}, []);
+
+useEffect(() => {
+  localStorage.setItem("my-cart", JSON.stringify(cart));
+});
 
 const removeFromCart = (productToRemove) => {
     setCart(cart.filter(product => product !== productToRemove ))
@@ -37,6 +46,8 @@ const addToCart =(product) => {
       newCart.push(itemInCart);
     }
     setCart(newCart)
+
+   
 }
 
 const clearCart = () => {
