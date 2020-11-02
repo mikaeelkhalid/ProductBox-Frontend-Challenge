@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-function  Products({ navigateTo, addToCart}) {
+function  Products({addToCart}) {
  
 const [products, addProduct] = useState([{}]);
 

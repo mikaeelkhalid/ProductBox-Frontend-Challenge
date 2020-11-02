@@ -46,7 +46,6 @@ const addToCart =(product) => {
       newCart.push(itemInCart);
     }
     setCart(newCart)
-
    
 }
 
